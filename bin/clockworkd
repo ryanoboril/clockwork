@@ -77,7 +77,7 @@ process_name =  "#{bin_basename}.#{@options[:identifier]}"
 Dir.mkdir(@options[:pid_dir]) unless File.exists?(@options[:pid_dir])
 Dir.mkdir(@options[:log_dir]) unless File.exists?(@options[:log_dir])
 
-puts "#{process_name}: pid file: #{File.expand_path(File.join(@options[:pid_dir], @options[:pid_file] or (process_name + '.pid')))}"
+puts "#{process_name}: pid file: #{File.expand_path(File.join(@options[:pid_dir], @options[:pid_file] || (process_name + '.pid')))}"
 
 if @options[:log_output]
   puts "#{process_name}: output log file: #{File.expand_path(File.join(@options[:log_dir],process_name + '.output'))}"
